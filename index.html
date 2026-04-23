@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Manager | Automotive Hub</title>
+    <style>
+        :root {
+            --primary-red: #d32f2f;
+            --dark-black: #1a1a1a;
+            --textured-bg: linear-gradient(145deg, #1a1a1a, #8b0000);
+            --white: #ffffff;
+            --light-grey: #f4f4f4;
+        }
+
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: var(--white); color: var(--dark-black); line-height: 1.6; scroll-behavior: smooth; }
+
+        /* Navigation */
+        header { background: var(--white); border-bottom: 3px solid var(--primary-red); padding: 10px 0; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1100px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo-nav { max-width: 150px; }
+        nav a { text-decoration: none; color: var(--dark-black); font-weight: bold; margin-left: 20px; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--primary-red); }
+
+        /* Hero with Workshop Background */
+        .hero { 
+            padding: 120px 0; 
+            text-align: center; 
+            background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://static.wixstatic.com/media/11062b_348835af73e94a0bb69074e6202b3342~mv2.jpg/v1/fill/w_640,h_738,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_348835af73e94a0bb69074e6202b3342~mv2.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; color: var(--dark-black); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; font-weight: 500; }
+        .btn { display: inline-block; background: var(--primary-red); color: var(--white); padding: 18px 40px; border-radius: 4px; font-weight: bold; text-transform: uppercase; text-decoration: none; border: 2px solid var(--primary-red); transition: 0.3s; }
+        .btn:hover { background: var(--white); color: var(--primary-red); }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
+        h2 { text-align: center; color: var(--primary-red); margin-bottom: 40px; font-size: 2.5rem; }
+
+        /* Comparison, Suitability, Pricing, Features, Screenshots, Footer styles maintained as before */
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .bad-paper { border-left: 5px solid #555; padding-left: 20px; }
+        .good-digital { border-left: 5px solid var(--primary-red); padding-left: 20px; }
+        .suitability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .suitability-card { padding: 30px; background: var(--light-grey); border-left: 5px solid var(--primary-red); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .price-card { padding: 40px; background: #fff; border: 2px solid #ddd; text-align: center; transition: 0.3s; }
+        .price-card:hover { border-color: var(--primary-red); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .price-card h3 { color: var(--primary-red); font-size: 1.5rem; }
+        .price { font-size: 2.5rem; font-weight: bold; margin: 20px 0; }
+        .features-list { list-style: none; padding: 0; text-align: left; }
+        .features-list li { margin-bottom: 10px; padding-left: 25px; position: relative; }
+        .features-list li::before { content: '✓'; color: var(--primary-red); position: absolute; left: 0; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background: var(--textured-bg); color: var(--white); padding: 40px; border-radius: 8px; transition: transform 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .screenshots { background: var(--dark-black); color: var(--white); }
+        .screenshot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .screenshot-item { text-align: center; }
+        .screenshot-item img { width: 100%; border: 4px solid var(--white); }
+        footer { background: #000; color: var(--white); padding: 50px 0; text-align: center; }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <img src="https://files.fm/thumb_show.php?i=d6d4q37mpg" alt="Logo" class="logo-nav">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#suitability">Suitability</a>
+                <a href="#pricing">Pricing</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>The Central Hub for Modern Workshops</h1>
+            <p>Software created by professionals, for professionals. Secure, cloud-based, and built to scale.</p>
+            <a href="mailto:info@workshopmanager.co.uk" class="btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Workshop Manager</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; margin-bottom: 50px;">Workshop Manager is designed to transform how garages operate. By replacing fragmented, manual processes with a single, cloud-based digital hub, we help you reclaim hours of administrative time every week.</p>
+            <div class="comparison-grid">
+                <div class="bad-paper">
+                    <h3>The Risk of Manual Diaries</h3>
+                    <ul>
+                        <li><strong>Fragile:</strong> Paper records can be lost or damaged.</li>
+                        <li><strong>Siloed:</strong> Not accessible from the workshop floor.</li>
+                        <li><strong>Inefficient:</strong> Manual entry is slow and prone to errors.</li>
+                    </ul>
+                </div>
+                <div class="good-digital">
+                    <h3>The Power of Our Digital Hub</h3>
+                    <ul>
+                        <li><strong>Secure:</strong> Encrypted data, automatic backups.</li>
+                        <li><strong>Synchronized:</strong> Reception, Parts, and Workshop linked in real-time.</li>
+                        <li><strong>Integrated:</strong> Job cards and parts requests managed in one dashboard.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="suitability" style="background: var(--light-grey);">
+        <div class="container">
+            <h2>Built For Every Workshop</h2>
+            <div class="suitability-grid">
+                <div class="suitability-card">
+                    <h3>Small Independents</h3>
+                    <p>Stop drowning in paperwork. Our platform is intuitive and easy to adopt, giving small teams enterprise-grade tools to manage diaries, parts, and bookings without the need for a dedicated IT department.</p>
+                </div>
+                <div class="suitability-card">
+                    <h3>Main Dealer Groups</h3>
+                    <p>Maintain control across large operations. Benefit from comprehensive audit trails, centralized management, and up to 10 years of historical data access, ensuring high standards of reporting and professional presentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>Select Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Lite</h3>
+                    <div class="price">£99<span>/mo</span></div>
+                    <ul class="features-list">
+                        <li>Live Editable Calendar</li>
+                        <li>Digital Job Cards</li>
+                        <li>Parts Request Form</li>
+                        <li>Full Scheduling</li>
+                    </ul>
+                </div>
+                <div class="price-card" style="border-color: var(--primary-red);">
+                    <h3>Gold</h3>
+                    <div class="price">£149<span>/mo</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Lite</li>
+                        <li>Customizable Logo</li>
+                        <li>Multiple Booking Types</li>
+                        <li>Online Booking Form</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>Elite</h3>
+                    <div class="price">£249<span>/mo</span></div>
+                    <ul class="features-list">
+                        <li>Everything in Gold</li>
+                        <li>Enhanced Categories</li>
+                        <li>5 Years Data History</li>
+                        <li>Free One-Page Website</li>
+                        <li>Custom Email (Blu Computers)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 style="color: var(--primary-red);">Core Capabilities</h2>
+            <div class="grid">
+                <div class="feature-card"><h3>100% Cloud-Based</h3><p>Access your business data anywhere, anytime, on any device.</p></div>
+                <div class="feature-card"><h3>Unified Hub</h3><p>Seamlessly link your reception desk, parts department, and workshop floor.</p></div>
+                <div class="feature-card"><h3>Digital Job Cards</h3><p>Eliminate paper trails with professional digital job cards.</p></div>
+                <div class="feature-card"><h3>Parts Request System</h3><p>Directly request and track parts against specific jobs.</p></div>
+                <div class="feature-card"><h3>10-Year Management</h3><p>Future-proof your business with advanced long-term scheduling.</p></div>
+                <div class="feature-card"><h3>Customizable Interface</h3><p>Personalize the platform with your own workshop branding.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <div class="container">
+            <h2>Seamless Multi-Platform Access</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-item"><img src="https://files.fm/thumb_show.php?i=jn2jv8yc7d" alt="Desktop"><p>Desktop Management</p></div>
+                <div class="screenshot-item"><img src="https://files.fm/thumb_show.php?i=yx6zxyem76" alt="Mobile"><p>Mobile Access</p></div>
+                <div class="screenshot-item"><img src="https://files.fm/thumb_show.php?i=975aabgtqt" alt="Tablet"><p>Tablet Overview</p></div>
+                <div class="screenshot-item"><img src="https://files.fm/thumb_show.php?i=n2tkxuexae" alt="Multi-platform"><p>Cross-Device Sync</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>Workshop Manager</strong> | Software created by professionals for professionals.</p>
+            <p>Email: <a href="mailto:info@workshopmanager.co.uk" style="color: var(--primary-red);">info@workshopmanager.co.uk</a></p>
+            <p>&copy; 2026 Workshop Manager. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
